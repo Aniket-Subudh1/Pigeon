@@ -8,6 +8,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Additional login logic can be added here (e.g., handling user inputs, authenticating)
+
     }
 }
