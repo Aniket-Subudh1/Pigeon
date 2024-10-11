@@ -16,15 +16,20 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash)
+
+        // Apply window insets for edge-to-edge experience
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Use a Handler to delay the transition to MainActivity for 2 seconds
         Handler(Looper.getMainLooper()).postDelayed({
+            // Start MainActivity after the splash screen duration
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
-            finish()
+            finish() // Close the SplashActivity so it doesn't remain in the back stack
         }, splashScreenDuration)
     }
 }
