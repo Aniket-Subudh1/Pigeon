@@ -7,9 +7,10 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
-        maven(url = "https://jitpack.io") // JitPack for plugins
+        maven(url = "https://jitpack.io")
         mavenCentral()
         gradlePluginPortal()
+        google()
     }
 }
 dependencyResolutionManagement {
@@ -18,7 +19,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            url = uri("https://jitpack.io") // Corrected: using `uri()` for the URL
+            url = uri("https://jitpack.io")
         }
     }
 }

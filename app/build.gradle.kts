@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -13,7 +14,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -43,6 +43,18 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation (libs.lottie)
+
+
+    //FireBase
+    implementation (libs.google.firebase.firestore.ktx)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
+    implementation (libs.google.firebase.auth.ktx)
+    implementation (libs.google.firebase.storage)
+    implementation (libs.google.firebase.messaging)
+    implementation (libs.firebase.installations)
+
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

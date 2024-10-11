@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419160910071",
+    "project_id": "pigeon-598d5",
+    "storage_bucket": "pigeon-598d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419160910071:android:af6c3ccea5062b052e0bf2",
+        "android_client_info": {
+          "package_name": "com.example.piegeon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzLaUhBVIsbRa8hbXbftZxenUDBs_Wkec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
