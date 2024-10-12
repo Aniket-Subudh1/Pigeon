@@ -1,4 +1,4 @@
-package com.example.piegeon
+package com.example.pigeon
 
 import org.junit.Test
 

@@ -1,20 +1,28 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id ("kotlin-android")
+    id ("kotlin-parcelize")
+    id ("kotlin-kapt")
+
 }
 
 android {
-    namespace = "com.example.piegeon"
+    namespace = "com.example.pigeon"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.piegeon"
+        applicationId = "com.example.pigeon"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        isEnabled = true
     }
 
     buildTypes {
@@ -26,14 +34,17 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
+
 
 dependencies {
 
@@ -45,6 +56,14 @@ dependencies {
     implementation (libs.lottie)
 
 
+    // Lifecycle components
+    implementation (libs.androidx.lifecycle.common.java8)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
+    implementation (libs.androidx.activity.ktx)
+
+
+
     //FireBase
     implementation (libs.google.firebase.firestore.ktx)
     implementation(libs.firebase.firestore)
@@ -54,7 +73,25 @@ dependencies {
     implementation (libs.google.firebase.messaging)
     implementation (libs.firebase.installations)
 
+    //Navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
+    // Glide
+    implementation (libs.com.github.bumptech.glide.glide)
+    annotationProcessor (libs.github.compiler)
+
+    //
+    implementation (libs.hdodenhof.circleimageview)
+
+    // Retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.logging.interceptor)
+
+    // Coroutines
+    implementation (libs.org.jetbrains.kotlinx.kotlinx.coroutines.android3)
+    implementation (libs.kotlinx.coroutines.core)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

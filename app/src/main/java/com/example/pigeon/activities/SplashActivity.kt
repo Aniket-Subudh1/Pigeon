@@ -1,4 +1,4 @@
-package com.example.piegeon
+package com.example.pigeon.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.pigeon.R
+
 
 class SplashActivity : AppCompatActivity() {
     private val splashScreenDuration = 4000L
@@ -24,12 +26,13 @@ class SplashActivity : AppCompatActivity() {
             insets
         }
 
-        // Use a Handler to delay the transition to MainActivity for 2 seconds
+        // Use a Handler to delay the transition to SignInActivity
         Handler(Looper.getMainLooper()).postDelayed({
-            // Start MainActivity after the splash screen duration
-            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+            // Start SignInActivity after the splash screen duration
+            val intent = Intent(this@SplashActivity, SignInActivity::class.java) // Corrected the intent
             startActivity(intent)
             finish() // Close the SplashActivity so it doesn't remain in the back stack
         }, splashScreenDuration)
     }
 }
+

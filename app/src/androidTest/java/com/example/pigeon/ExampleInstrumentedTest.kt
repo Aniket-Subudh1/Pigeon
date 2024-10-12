@@ -1,4 +1,4 @@
-package com.example.piegeon
+package com.example.pigeon
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.piegeon">
+    package="com.example.pigeon">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="true"
@@ -13,26 +20,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pigeon"
         tools:targetApi="31">
+
         <!-- Splash Activity (Launcher) -->
         <activity
-            android:name=".SplashActivity"
-            android:exported="true">
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Pigeon"> <!-- Ensure the splash screen has no ActionBar -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Main Activity -->
+        </activity>
+
+        <!-- SignUp Activity -->
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+
+        <!-- SignIn Activity -->
+        <activity
+            android:name=".activities.SignInActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true" />
+
+        <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-
-
-        <activity android:name=".SignupActivity"
-            android:exported="false" />
+            android:exported="true" />
 
     </application>
 
