@@ -27,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
         // Use a Handler to delay the transition to MainActivity for 2 seconds
         Handler(Looper.getMainLooper()).postDelayed({
             // Start MainActivity after the splash screen duration
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
             startActivity(intent)
             finish() // Close the SplashActivity so it doesn't remain in the back stack
         }, splashScreenDuration)
