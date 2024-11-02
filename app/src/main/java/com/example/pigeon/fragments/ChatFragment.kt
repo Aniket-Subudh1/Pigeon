@@ -1,4 +1,4 @@
-package com.example.chatmessenger.fragments
+package com.example.pigeon.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -16,11 +16,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.chatmessenger.R
-import com.example.chatmessenger.Utils
-import com.example.chatmessenger.adapter.MessageAdapter
-import com.example.chatmessenger.databinding.FragmentChatBinding
-import com.example.chatmessenger.modal.Messages
+import com.example.pigeon.R
+import com.example.pigeon.Utils
+import com.example.pigeon.adapter.MessageAdapter
+import com.example.pigeon.databinding.FragmentChatBinding
+import com.example.pigeon.modal.Messages
 import com.example.chatmessenger.mvvm.ChatAppViewModel
 import de.hdodenhof.circleimageview.CircleImageView
 
