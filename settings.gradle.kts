@@ -7,8 +7,10 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        maven(url = "https://jitpack.io")
         mavenCentral()
         gradlePluginPortal()
+        google()
     }
 }
 dependencyResolutionManagement {
@@ -16,9 +18,12 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 
 rootProject.name = "Piegeon"
 include(":app")
- 
+
