@@ -19,11 +19,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
-import com.example.chatmessenger.mvvm.ChatAppViewModel
+import com.example.pigeon.mvvm.ChatAppViewModel
 import com.example.pigeon.R
 import com.example.pigeon.Utils
 import com.example.pigeon.databinding.FragmentSettingBinding
-import com.example.pigeon.mvvm.ChatAppViewModel
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.ByteArrayOutputStream
@@ -58,7 +57,7 @@ class SettingFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(ChatAppViewModel::class.java)
 
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.viewModel = viewModel
+//        binding.viewModel = viewModel
 
 
 

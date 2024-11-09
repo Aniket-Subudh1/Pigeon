@@ -1,4 +1,5 @@
 @file:Suppress("DEPRECATION")
+
 package com.example.pigeon.fragments
 
 import android.app.ActivityManager
@@ -23,7 +24,9 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.chatmessenger.mvvm.ChatAppViewModel
+import com.example.Piegeon.adapter.OnItemClickListener
+import com.example.Piegeon.adapter.UserAdapter
+import com.example.chatmessenger.fragments.HomeFragmentDirections
 import com.example.pigeon.R
 import com.example.pigeon.SharedPrefs
 import com.example.pigeon.Utils
@@ -40,8 +43,8 @@ import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import de.hdodenhof.circleimageview.CircleImageView
-
 class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
+
 
     lateinit var rvUsers : RecyclerView
     lateinit var rvRecentChats : RecyclerView
@@ -52,6 +55,7 @@ class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
     lateinit var recentadapter : RecentChatAdapter
     lateinit var firestore : FirebaseFirestore
     lateinit var binding: FragmentHomeBinding
+    lateinit var args: HomeFragment
 
 
     override fun onCreateView(
@@ -153,12 +157,7 @@ class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
 
         }
 
-
         adapter.setOnClickListener(this)
-
-
-
-
 
         viewModel.getRecentUsers().observe(viewLifecycleOwner, Observer {
 
@@ -167,16 +166,9 @@ class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
             rvRecentChats.adapter = recentadapter
 
 
-
-
-
         })
 
         recentadapter.setOnChatClickListener(this)
-
-
-
-
 
 
     }
@@ -209,4 +201,3 @@ class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
 
 
 }
-
