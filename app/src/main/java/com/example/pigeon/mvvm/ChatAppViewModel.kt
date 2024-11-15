@@ -40,15 +40,15 @@ class ChatAppViewModel : ViewModel() {
 
 
     val message = MutableLiveData<String>()
-    val firestore = FirebaseFirestore.getInstance()
+    private val firestore = FirebaseFirestore.getInstance()
     val name = MutableLiveData<String>()
     val imageUrl = MutableLiveData<String>()
 
 
-    val usersRepo = UsersRepo()
-    val messageRepo = MessageRepo()
-    var token: String? = null
-    val chatlistRepo = ChatListRepo()
+    private val usersRepo = UsersRepo()
+    private val messageRepo = MessageRepo()
+    private var token: String? = null
+    private val chatlistRepo = ChatListRepo()
 
     val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         throwable.printStackTrace()
@@ -89,10 +89,10 @@ class ChatAppViewModel : ViewModel() {
 
             val friendnamesplit = friendname.split("\\s".toRegex())[0]
             val mysharedPrefs = SharedPrefs(context)
-            mysharedPrefs.setValue("friendid", receiver)
-            mysharedPrefs.setValue("chatroomid", uniqueId.toString())
-            mysharedPrefs.setValue("friendname", friendnamesplit)
-            mysharedPrefs.setValue("friendimage", friendimage)
+            mysharedPrefs.setValue("friended", receiver)
+            mysharedPrefs.setValue("chatroom", uniqueId.toString())
+            mysharedPrefs.setValue("friend name", friendnamesplit)
+            mysharedPrefs.setValue("friend image", friendimage)
 
 
 

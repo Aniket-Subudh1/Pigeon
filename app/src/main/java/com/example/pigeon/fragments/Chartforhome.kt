@@ -20,9 +20,12 @@ import com.example.Pigeon.databinding.FragmentChatfromHomeBinding
 import com.example.Pigeon.modal.Messages
 import com.example.Pigeon.mvvm.ChatAppViewModel
 import com.example.chatmessenger.mvvm.ChatAppViewModel
+import com.example.pigeon.Utils
+import com.example.pigeon.adapter.MessageAdapter
+import com.example.pigeon.modal.Messages
 import de.hdodenhof.circleimageview.CircleImageView
 
-class Chartforhome : Fragment {
+class Chartforhome : Fragment() {
 
 
     lateinit var args : ChatfromHomeArgs
@@ -113,6 +116,7 @@ class Chartforhome : Fragment {
         adapter = MessageAdapter()
 
         val layoutManager = LinearLayoutManager(context)
+
 
         binding.messagesRecyclerView.layoutManager = layoutManager
         layoutManager.stackFromEnd = true
