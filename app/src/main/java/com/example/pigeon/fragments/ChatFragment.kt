@@ -1,4 +1,4 @@
-package com.example.pigeon.fragments
+package com.example.chatmessenger.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -21,7 +21,7 @@ import com.example.pigeon.Utils
 import com.example.pigeon.adapter.MessageAdapter
 import com.example.pigeon.databinding.FragmentChatBinding
 import com.example.pigeon.modal.Messages
-import com.example.chatmessenger.mvvm.ChatAppViewModel
+import com.example.pigeon.mvvm.ChatAppViewModel
 import de.hdodenhof.circleimageview.CircleImageView
 
 
@@ -65,12 +65,12 @@ class ChatFragment : Fragment() {
 
         args = ChatFragmentArgs.fromBundle(requireArguments())
 
-        binding.viewModel = viewModel
+        binding.viewModel= viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
 
 
-        Glide.with(view.getContext()).load(args.users.imageUrl!!).placeholder(R.drawable.person).dontAnimate().into(circleImageView);
+        Glide.with(requireContext()).load(args.users.imageUrl).placeholder(R.drawable.person).into(circleImageView)
         textViewName.setText(args.users.username)
         textViewStatus.setText(args.users.status)
 

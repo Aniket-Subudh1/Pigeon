@@ -1,4 +1,4 @@
-package com.example.chatmessenger.mvvm
+package com.example.pigeon.mvvm
 
 import android.content.SharedPreferences
 import android.util.Log

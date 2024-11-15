@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.pigeon.mvvm.ChatAppViewmodel" />
+            type="com.example.pigeon.mvvm.ChatAppViewModel" />
 
 
 
